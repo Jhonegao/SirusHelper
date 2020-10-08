@@ -43,6 +43,17 @@
   <ItemGroup>
     <Compile Include="DBAcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SirusDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{44548771-018A-4183-8F46-71FE12D91A20}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Entities.csproj">
+      <Project>{C544E5DC-1699-4720-BD56-EFF78A89BC07}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
