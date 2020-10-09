@@ -11,9 +11,9 @@ namespace DAL
 {
     class SirusDAL
     {
-        public DBResponse Insert(Sirus sirus)
+        public Response Insert(Sirus sirus)
         {
-            DBResponse response = new DBResponse();
+            Response response = new Response();
             //classe responsavel por realizar conexao fisica com banco de dados
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\dbSirus.mdf;Integrated Security=True;Connect Timeout=30";
@@ -46,13 +46,11 @@ namespace DAL
             }
             return response;
         }
-        public DBResponse Update(Sirus sirus)
+        public Response Update(Sirus sirus)
         {
-            DBResponse response = new DBResponse();
-            //classe responsavel por realizar conexao fisica com banco de dados
+            Response response = new Response();
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\dbSirus.mdf;Integrated Security=True;Connect Timeout=30";
-            //classe responsavel por realizar um querry no DB
             SqlCommand command = new SqlCommand();
             command.CommandText = "UPDATE Sirus SET NOME = @NOME, ATIVO = @ATIVO, AWAKENER = @AWAKENER, COMPLETADO = @COMPLETADO, WHERE ID = @ID";
             command.Parameters.AddWithValue("@NOME", sirus.Nome);
@@ -76,7 +74,6 @@ namespace DAL
             {
                 response.Sucess = false;
                 response.Message = "Erro no Banco de dados, contato o administrador.";
-                //estas duas propriedades sao para LOG
                 response.StackTrace = e.StackTrace;
                 response.ExceptionError = e.Message;
             }
@@ -87,9 +84,9 @@ namespace DAL
             }
             return response;
         }
-        public DBResponse Delete(Sirus sirus)
+        public Response Delete(Sirus sirus)
         {
-            DBResponse response = new DBResponse();
+            Response response = new Response();
             //classe responsavel por realizar conexao fisica com banco de dados
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\dbSirus.mdf;Integrated Security=True;Connect Timeout=30";
@@ -126,5 +123,50 @@ namespace DAL
             }
             return response;
         }
+
+        public DBQueryResponse<Sirus> GetAll()
+        {
+            DBQueryResponse<Sirus> response = new DBQueryResponse<Sirus>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\dbSirus.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT * FROM CLIENTES WHERE ATIVO = 1";
+            command.Connection = connection;
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                List<Sirus> _ListSirus = new List<Sirus>();
+                while (reader.Read())
+                {
+                    Sirus c = new Sirus();
+                    c.ID = (int)reader["ID"];
+                    c.Nome = (string)reader["NOME"];
+                    c.Awakener = (byte)reader["AWAKENER"];
+                    c.DataCadastro = (DateTime)reader["DATACADASTRO"];
+                    c.Completado = (bool)reader["COMPLETADO"];
+                    c.Ativo = (bool)reader["ATIVO"];
+                    _ListSirus.Add(c);
+                }
+                response.Sucess = true;
+                response.Message = "Dados selecionados com sucesso";
+                response.Data = _ListSirus;
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.Sucess = false;
+                response.Message = "Erro no Banco de dados, contato o administrador.";
+                response.StackTrace = e.StackTrace;
+                response.ExceptionError = e.Message;
+                return response;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
     }
 }

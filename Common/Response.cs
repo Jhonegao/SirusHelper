@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 //calsses que sao referenciadas por todo projeto mas nao sao entidades
 namespace Common
 {
-    public class DBResponse
+    public class Response
     {
         public bool Sucess { get; set; }
         public string Message { get; set; }
