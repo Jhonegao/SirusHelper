@@ -6,10 +6,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+ 
 namespace DAL
 {
-    class SirusDAL
+    public class SirusDAL
     {
         public Response Insert(Sirus sirus)
         {
@@ -28,12 +28,12 @@ namespace DAL
             {
                 connection.Open();
                 command.ExecuteNonQuery();
-                response.Sucess = true;
+                response.Success = true;
                 response.Message = "Cadastrado com sucess.";
             }
             catch(Exception e)
             {
-                response.Sucess = false;
+                response.Success = false;
                 response.Message = "Erro no Banco de dados, contato o administrador.";
                 //estas duas propriedades sao para LOG
                 response.StackTrace = e.StackTrace;
@@ -63,16 +63,16 @@ namespace DAL
                 int rowsAffected = command.ExecuteNonQuery();
                 if (rowsAffected != 1)
                 {
-                    response.Sucess = false;
+                    response.Success = false;
                     response.Message = "Registro nao encontrado";
                     return response;
                 }
-                response.Sucess = true;
+                response.Success = true;
                 response.Message = "Atualizado com sucesso.";
             }
             catch (Exception e)
             {
-                response.Sucess = false;
+                response.Success = false;
                 response.Message = "Erro no Banco de dados, contato o administrador.";
                 response.StackTrace = e.StackTrace;
                 response.ExceptionError = e.Message;
@@ -101,16 +101,16 @@ namespace DAL
                 int rowsAffected = command.ExecuteNonQuery();
                 if (rowsAffected != 1)
                 {
-                    response.Sucess = false;
+                    response.Success = false;
                     response.Message = "Registro nao encontrado";
                     return response;
                 }
-                response.Sucess = true;
+                response.Success = true;
                 response.Message = "Deletado com sucesso";
             }
             catch (Exception e)
             {
-                response.Sucess = false;
+                response.Success = false;
                 response.Message = "Erro no Banco de dados, contato o administrador.";
                 //estas duas propriedades sao para LOG
                 response.StackTrace = e.StackTrace;
@@ -124,9 +124,9 @@ namespace DAL
             return response;
         }
 
-        public DBQueryResponse<Sirus> GetAll()
+        public QueryResponse<Sirus> GetAll()
         {
-            DBQueryResponse<Sirus> response = new DBQueryResponse<Sirus>();
+            QueryResponse<Sirus> response = new QueryResponse<Sirus>();
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\entra21\Documents\dbSirus.mdf;Integrated Security=True;Connect Timeout=30";
             SqlCommand command = new SqlCommand();
@@ -149,14 +149,14 @@ namespace DAL
                     c.Ativo = (bool)reader["ATIVO"];
                     _ListSirus.Add(c);
                 }
-                response.Sucess = true;
+                response.Success = true;
                 response.Message = "Dados selecionados com sucesso";
                 response.Data = _ListSirus;
                 return response;
             }
             catch (Exception e)
             {
-                response.Sucess = false;
+                response.Success = false;
                 response.Message = "Erro no Banco de dados, contato o administrador.";
                 response.StackTrace = e.StackTrace;
                 response.ExceptionError = e.Message;

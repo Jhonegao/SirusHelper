@@ -1,0 +1,10 @@
+C:\Users\entra21\source\repos\HelpSirus\DAL\bin\Debug\DAL.dll
+C:\Users\entra21\source\repos\HelpSirus\DAL\bin\Debug\DAL.pdb
+C:\Users\entra21\source\repos\HelpSirus\DAL\bin\Debug\Common.dll
+C:\Users\entra21\source\repos\HelpSirus\DAL\bin\Debug\Domain.dll
+C:\Users\entra21\source\repos\HelpSirus\DAL\bin\Debug\Common.pdb
+C:\Users\entra21\source\repos\HelpSirus\DAL\bin\Debug\Domain.pdb
+C:\Users\entra21\source\repos\HelpSirus\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\entra21\source\repos\HelpSirus\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\entra21\source\repos\HelpSirus\DAL\obj\Debug\DAL.dll
+C:\Users\entra21\source\repos\HelpSirus\DAL\obj\Debug\DAL.pdb

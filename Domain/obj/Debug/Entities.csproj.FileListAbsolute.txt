@@ -1,0 +1,5 @@
+C:\Users\entra21\source\repos\HelpSirus\Domain\bin\Debug\Domain.dll
+C:\Users\entra21\source\repos\HelpSirus\Domain\bin\Debug\Domain.pdb
+C:\Users\entra21\source\repos\HelpSirus\Domain\obj\Debug\Entities.csprojAssemblyReference.cache
+C:\Users\entra21\source\repos\HelpSirus\Domain\obj\Debug\Domain.dll
+C:\Users\entra21\source\repos\HelpSirus\Domain\obj\Debug\Domain.pdb

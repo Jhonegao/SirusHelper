@@ -12,12 +12,17 @@ namespace BLL
         private List<string> errors = new List<string>();
         public void AddError(string error)
         {
-            errors.Add(error);
+            if (error != "")
+            {
+                errors.Add(error);
+            }
         }
 
         public virtual Response Validate(T item)
         {
-            return CheckErrors();
+            Response response = CheckErrors();
+            this.errors.Clear();
+            return response;
         }
         private Response CheckErrors()
         {
@@ -30,10 +35,10 @@ namespace BLL
                     builder.AppendLine(item);
                 }
                 r.Message = builder.ToString();
-                r.Sucess = false;
+                r.Success = false;
                 return r;
             }
-            r.Sucess = true;
+            r.Success = true;
             return r;
         }
     }

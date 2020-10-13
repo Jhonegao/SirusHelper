@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseValidator.cs" />
+    <Compile Include="Extensions\IsValidNameSirus.cs" />
     <Compile Include="SirusBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -49,6 +50,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{44548771-018A-4183-8F46-71FE12D91A20}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{35FE3462-23FD-464A-A200-A981CA0361D9}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Entities.csproj">
       <Project>{C544E5DC-1699-4720-BD56-EFF78A89BC07}</Project>

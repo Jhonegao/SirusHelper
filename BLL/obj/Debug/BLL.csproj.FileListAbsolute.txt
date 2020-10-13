@@ -1,0 +1,12 @@
+C:\Users\entra21\source\repos\HelpSirus\BLL\bin\Debug\BLL.dll
+C:\Users\entra21\source\repos\HelpSirus\BLL\bin\Debug\BLL.pdb
+C:\Users\entra21\source\repos\HelpSirus\BLL\bin\Debug\Common.dll
+C:\Users\entra21\source\repos\HelpSirus\BLL\bin\Debug\DAL.dll
+C:\Users\entra21\source\repos\HelpSirus\BLL\bin\Debug\Domain.dll
+C:\Users\entra21\source\repos\HelpSirus\BLL\bin\Debug\Common.pdb
+C:\Users\entra21\source\repos\HelpSirus\BLL\bin\Debug\DAL.pdb
+C:\Users\entra21\source\repos\HelpSirus\BLL\bin\Debug\Domain.pdb
+C:\Users\entra21\source\repos\HelpSirus\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\entra21\source\repos\HelpSirus\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\entra21\source\repos\HelpSirus\BLL\obj\Debug\BLL.dll
+C:\Users\entra21\source\repos\HelpSirus\BLL\obj\Debug\BLL.pdb
