@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Inf;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace DAL
         }
         public static void OpenConnection()
         {
-            string ConnectionSring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\entra21\Documents\dbSirus.mdf; Integrated Security = True; Connect Timeout = 30";
+            //pegando connection string pelo metodo static.
+            string ConnectionSring = ConnectionHelper.GetConectionString();
             connection.ConnectionString = ConnectionSring;
             connection.Open();
         }

@@ -53,10 +53,25 @@
       <DependentUpon>FormCadastroSirus.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCleaner.cs" />
+    <Compile Include="ListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListItem.Designer.cs">
+      <DependentUpon>ListItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultDatas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultDatas.Designer.cs">
+      <DependentUpon>ResultDatas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormCadastroSirus.resx">
       <DependentUpon>FormCadastroSirus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListItem.resx">
+      <DependentUpon>ListItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +82,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ResultDatas.resx">
+      <DependentUpon>ResultDatas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

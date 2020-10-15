@@ -30,10 +30,5 @@ namespace PresentationLayer
             FormCleaner.Clear(this);
         }
 
-        private void updateGridView()
-        {
-            QueryResponse<Sirus> response = sirusBLL.
-            this.dgvSirus.DataSource
-        }
     }
 }
